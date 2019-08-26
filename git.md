@@ -27,3 +27,29 @@
 - body: commit 具体修改内容, 可以分为多行, 建议符合 [50/72 formatting](https://stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting)
 - footer: 一些备注, 通常是 BREAKING CHANGE 或修复的 bug 的链接
 
+
+## Git 分支规范
+
+### 分支构成
+
+- master 主分支
+- dev 开发分支
+
+### 分支操作
+    
+- 新增功能，或者修复bug时，从以上分支或者其他主要分支拉取并新建分支格式为：
+    - `<username>/<fix | feat>_<something>`
+    - 例如：`tuo/feat_vcode` (新增验证码功能)
+- 每次合并代码之前使用 `git rebase <a branch>`，此分支为将要合并进去的分支  
+    - 详细操作请看 [官方文档](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA)
+    - 如有冲突请仔细检查并解决冲突
+    - 此操作可保持提交记录整洁
+
+
+## Git 命令
+
+[官方文档](https://git-scm.com/book/zh/v2/)
+
+- `git commit --amend` 修改最近一次提交记录，包括commit message 、提交的内容(需将已修改的文件加入暂存区)
+- `git stash` 保存工作区，增加参数 `pop` 可恢复
+- `git rebase -i <commit hash>` 修改历史提交记录，根据提示具体操作

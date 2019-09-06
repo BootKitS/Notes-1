@@ -1,4 +1,5 @@
 ## 系统安装 CA 证书 [链接](https://www.bounca.org/tutorials/install_root_certificate.html)
+- chrome 无法信任 [链接](https://stackoverflow.com/questions/7580508/getting-chrome-to-accept-self-signed-localhost-certificate)
 
 ## Centos7 信任证书
 

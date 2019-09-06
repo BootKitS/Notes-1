@@ -1,3 +1,5 @@
+## 系统安装 CA 证书 [链接](https://www.bounca.org/tutorials/install_root_certificate.html)
+
 ## Centos7 信任证书
 
 - 拷贝证书到目录 `/etc/pki/ca-trust/source/anchors/`

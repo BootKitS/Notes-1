@@ -12,10 +12,10 @@
 ## 创建 Virtual Machine
 
 - 打开 PowerShell
-- 输入 `docker-machine create -d virtualbox dev`
+- 输入 `docker-machine create -d virtualbox default`
   - 如果使用 vmwareworkstation 驱动，请到 [Github](https://github.com/pecigonzalo/docker-machine-vmwareworkstation/releases) 下载，将文件放置在 C:\ProgramData\DockerDesktop\version-bin`
   - 安装 Vmware Workstation Pro 15
-  - `docker-machine create -d vmwareworkstation dev`
+  - `docker-machine create -d vmwareworkstation default`
 
 ## 设置环境变量（选其一）
 
@@ -30,10 +30,10 @@
   - DOCKER_TLS_VERIFY
     - 值：1
   - DOCKER_CERT_PATH
-    - 值：`%USERPROFILE%/.docker/machine/machines/dev`
+    - 值：`%USERPROFILE%/.docker/machine/machines/default`
 
 ### 设置 终端环境变量
-- docker-machine.exe env dev | Invoke-Expression
+- docker-machine.exe env default | Invoke-Expression
 - code
 
 ## 测试

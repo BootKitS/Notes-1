@@ -52,4 +52,8 @@
 
 - `git commit --amend` 修改最近一次提交记录，包括commit message 、提交的内容(需将已修改的文件加入暂存区)
 - `git stash` 保存工作区，增加参数 `pop` 可恢复
-- `git rebase -i <commit hash>` 修改历史提交记录，根据提示具体操作
+- `git rebase -i <CommitHash>` 修改历史提交记录，根据提示具体操作
+- `git branch -d <BranchName>` 删除本地分支
+- `git branch --remotes -d origin/<BranchName>` 已删除远程跟踪分支
+- `git push origin --delete <BranchName>` 删除远程分支
+- `git remote prune origin` 从本地版本库中去除远程已经删除的分支

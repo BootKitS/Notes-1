@@ -80,6 +80,11 @@
     - `[AS <name>]` 添加构建别名，如果 Dockerfile 中有多个 `FROM` 即可添加别名，构建时使用 `--target` 参数可以指定构建哪一个 
 - ENTRYPOINT 和 CMD
     - 建议使用 exec 格式
+    
+- 多个 `.dockerignore` 文件 [Link](https://github.com/moby/moby/issues/12886#issuecomment-480575928)
+    - Docker 版本 19.03+
+    - `export export DOCKER_BUILDKIT=1`
+    - dockerignore 文件名为 `< Dockerfile name>.dockerignore`
 
 
 

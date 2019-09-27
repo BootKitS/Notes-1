@@ -83,7 +83,7 @@
     
 - 多个 `.dockerignore` 文件 [Link](https://github.com/moby/moby/issues/12886#issuecomment-480575928)
     - Docker 版本 19.03+
-    - `export export DOCKER_BUILDKIT=1`
+    - `export DOCKER_BUILDKIT=1`
     - dockerignore 文件名为 `< Dockerfile name>.dockerignore`
 
 

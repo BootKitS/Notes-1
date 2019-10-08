@@ -5,7 +5,7 @@
   - [链接二](http://blog.sina.com.cn/s/blog_beebb7590102wqh5.html)
 
 - 安装依赖：yum install -y `ppp pptp pptp-setup`
-- 配置：`pptpsetup --create --server --username <用户名> --password <密码> --encrypt --start`
+- 配置：`pptpsetup --create --server <服务器> --username <用户名> --password <密码> --encrypt --start`
   - MPPE加密，pptpsetup时不需要使用–encrypt
 - 配置路由：
   - `route -n`

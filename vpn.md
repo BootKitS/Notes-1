@@ -11,6 +11,4 @@
         Connection terminated.` 可能是防火墙的问题
 - 配置路由：
   - `route -n`
-  - `route add -net 0.0.0.0 dev ppp0` (所有对外网络都通过ppp0路由)
-  - `ip route replace default dev ppp0` (和上面二选一，设置缺省路由)
-  - `route add default dev ppp0`
+  - `ip route replace default dev ppp0`

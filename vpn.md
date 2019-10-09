@@ -11,4 +11,4 @@
         Connection terminated.` 可能是防火墙的问题
 - 配置路由：
   - `route -n`
-  - `ip route replace default dev ppp0` or `route add -net 192.168.1.1/24 gw 192.168.1.1 dev ppp0`
+  - `ip route replace default dev ppp0` or `route add -net 192.168.1.0/24 gw 192.168.1.1 dev ppp0`

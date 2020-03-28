@@ -15,3 +15,14 @@
 - 配置路由：
   - `route -n`
   - `ip route replace default dev ppp0` or `route add -net 192.168.1.0/24 gw 192.168.1.1 dev ppp0`
+
+
+## OpenVPN
+
+- 连接使用: `openvpn --config <your config>.ovpn --auth-user-pass <username and password in file>`
+
+- 使用条件代理:
+
+  - 不从服务端拉取代理配置，配置文件加入 `route-nopull`
+  - 将 `192.168.10.*` 设置为使用OpenVPN代理，配置加入 `route 192.168.10.0 255.255.255.0 vpn_gateway`
+  - 将 `vpn_gateway` 改为 `net_gateway` 可排除 IP 或者网段不走 VPN

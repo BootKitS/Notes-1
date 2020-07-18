@@ -49,15 +49,16 @@
 - 保存镜像: `docker save <image>[:<tag>] -o filename`
     - 压缩保存：`docker save <image>[:<tag>] | gzip > filename`
 - 导入镜像: `docker load -i filename`
+- 批量导入镜像: `ls -1 *.tar.gz | xargs --no-run-if-empty -L 1 docker load -i`
 - 镜像迁移到另一个机器: `docker save <image>[:<tag>] | bzip2 | pv | ssh <username>@<hostname> 'cat | docker load'`
 - 私有仓库登录: docker login
     - [出现错误](https://stackoverflow.com/questions/42211380/add-insecure-registry-to-docker)：`Error response from daemon: Get https://your host/v2/: x509: cannot validate certificate for your host because it doesn't contain any IP SANs`
     - 解决方法: 在 `/etc/docker/daemon.json`(没有此文件自行新建) 添加
-        ```json
-        {
-            "insecure-registries" : [ "your docker hub host" ]
-        }
-        ```
+    ```json
+    {
+        "insecure-registries" : [ "your docker hub host" ]
+    }
+    ```
     - 然后重启 docker
         ```shell
         sudo systemctl daemon-reload

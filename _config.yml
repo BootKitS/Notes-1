@@ -99,5 +99,5 @@ theme: volantis
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/tuot/Notes
+  repo: git@github.com:tuot/Notes.git
   branch: gh-pages

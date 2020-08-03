@@ -1,8 +1,10 @@
-import requests
 import json
-import re
 import os
-from datetime import datetime
+import re
+import time
+from datetime import datetime, timezone
+
+import requests
 
 BASE_PATH = os.path.dirname(__file__)
 
@@ -17,6 +19,10 @@ headers = {
 MD_PATH = 'docs'
 IMAGE_PATH = 'images'
 ACCESS_TOKEN = ''
+
+
+def utc_to_local(utc_dt):
+    return utc_dt.replace(tzinfo=timezone.utc).astimezone(tz=None)
 
 
 def save_file(url):
@@ -81,11 +87,14 @@ def update_readme(articles):
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(md_head)
         for i in articles:
+            title = i['title']
+            url = i['html_url']
 
-            t = datetime.strptime(
-                i['updated_at'],
-                '%Y-%m-%dT%H:%M:%SZ').strftime('%Y-%m-%d %H:%M:%S')
-            f.write('- [{}]({})  {}\n\n'.format(i['title'], i['html_url'], t))
+            t = datetime.strptime(i['updated_at'], '%Y-%m-%dT%H:%M:%SZ')
+            local_t = utc_to_local(t)
+
+            lt_str = local_t.strftime('%Y-%m-%d %H:%M:%S')
+            f.write('- [{}]({})  {}\n\n'.format(title, url, lt_str))
 
 
 def main():

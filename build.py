@@ -81,8 +81,11 @@ def update_readme(articles):
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(md_head)
         for i in articles:
-            f.write('- [{}]({})  {}\n\n'.format(i['title'], i['html_url'],
-                                                i['updated_at']))
+
+            t = datetime.strptime(
+                i['updated_at'],
+                '%Y-%m-%dT%H:%M:%SZ').strftime('%Y-%m-%d %H:%M:%S')
+            f.write('- [{}]({})  {}\n\n'.format(i['title'], i['html_url'], t))
 
 
 def main():

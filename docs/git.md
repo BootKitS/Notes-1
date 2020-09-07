@@ -55,7 +55,7 @@
 - `git rebase -i <CommitHash>` 修改历史提交记录，根据提示具体操作
 - `git branch -d <BranchName>` 删除本地分支
 - `git branch --remotes -d origin/<BranchName>` 已删除远程跟踪分支
-- `git push origin --delete <BranchName>` 删除远程分支
+- `git push origin --delete <BranchName>`  或 `git push origin  :<BranchName>` 删除远程分支
 - `git remote prune origin` 从本地版本库中去除远程已经删除的分支
 
 ## 学习 Git 命令 [Learn Git](https://learngitbranching.js.org/)

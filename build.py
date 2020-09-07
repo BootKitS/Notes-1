@@ -5,6 +5,17 @@ import time
 from datetime import datetime, timezone
 
 import requests
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+IS_PROXY = True
+if IS_PROXY:
+    proxy = 'http://127.0.0.1:7890'
+    os.environ['http_proxy'] = proxy
+    os.environ['HTTP_PROXY'] = proxy
+    os.environ['https_proxy'] = proxy
+    os.environ['HTTPS_PROXY'] = proxy
 
 BASE_PATH = os.path.dirname(__file__)
 
@@ -29,7 +40,7 @@ def save_file(url):
 
     name = url.split('/')[-1]
     file_path = os.path.join(BASE_PATH, MD_PATH, IMAGE_PATH, name)
-    r = requests.get(url, stream=True)
+    r = requests.get(url, verify=False, stream=True)
     with open(file_path, 'wb') as f:
         for chunk in r.iter_content(chunk_size=32):
             f.write(chunk)
